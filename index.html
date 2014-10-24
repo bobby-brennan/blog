@@ -23,27 +23,23 @@
         </header>
 
         <section id="downloads" class="clearfix">
-          <a href="https://github.com/bobby-brennan/lucy" id="view-on-github" class="button"><span>View on GitHub</span></a>
+          <a href="https://github.com/lucybot/blog/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/lucybot/blog/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/lucybot/blog" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
 
         <hr>
 
         <section id="main_content">
-        Join the beta!<br>
-        <form action="http://lucyreg.bbrennan.info:3000/beta-signup" method="GET" style="background-color:rgba(0,0,0,0.0);">
-          <input type="text" name="email" placeholder="e-mail address" style="width:400px;"></input>
-          <input type="submit" value="Join"></input>
-        </form>
-
           <h2>
 <a name="first-post-hello-world" class="anchor" href="#first-post-hello-world"><span class="octicon octicon-link"></span></a>First post: Hello World</h2>
 
 <p>10/23/2014<br><br>
-The first official lucy release was pushed today! You can learn about the project here:
+The first official lucy release was pushed today! You can see the project here:
 <br>
 <a href="https://github.com/bobby-brennan/lucy">https://github.com/bobby-brennan/lucy</a>
 <br>
-<code>define</code> and <code>publish</code> are still in beta, but you can <code>build</code> all you want!
+<code>define</code> and <code>publish</code> are still in beta, but you can <code>build</code> all you want! Sign up for the beta (above) if you'd like an early peek at the full version.
 <br>
 <br>
 So what can lucy do? To start, there are two main components to a lucy module:<br></p>
@@ -56,9 +52,31 @@ So what can lucy do? To start, there are two main components to a lucy module:<b
 </ul>
 
 <p>Most users will simply run <code>lucy build</code> to generate code from an existing lucy package. However, you can also create your own definitions and packages to share with others. Let's walk through a "hello world" example.</p>
-<p>If you haven't installed lucy yet, head over to <a href="https://github.com/bobby-brennan/lucy">for instructions</a></p>
 
-<p><i>Note that while we're in beta, the <code>define</code> and <code>publish</code> commands won't work unless you're signed up. Feel free to jump ahead to <code>build</code> though!</i></p>
+<p><i>Note that while we're in beta, the <code>define</code> and <code>publish</code> commands won't work unless you're signed up. Feel free to jump ahead to <code>build</code> though!</i>
+<br>
+If you haven't already installed lucy, visit the<a href="https://github.com/bobby-brennan/lucy">github page</a> for instructions.</p>
+
+<h3>
+<a name="quickstart" class="anchor" href="#quickstart"><span class="octicon octicon-link"></span></a>Quickstart</h3>
+
+<p>To download all the files described in this tutorial, enter a new directory and run</p>
+
+<div class="highlight highlight-bash"><pre>lucy build hello-world-starter <span class="s1">'{"username": "SOME_UNIQUE_ID"}'</span>
+</pre></div>
+
+<p>choosing a unique id that won't collide with other hello-world-* definitions.</p>
+
+<p>you can then run</p>
+
+<div class="highlight highlight-bash"><pre>lucy define def.json
+
+lucy publish pkg
+lucy build hello-world-YOUR_UNIQUE_ID:js config.json
+
+lucy publish javapkg
+lucy build hello-world-YOUR_UNIQUE_ID:java config.json
+</pre></div>
 
 <h3>
 <a name="the-definition" class="anchor" href="#the-definition"><span class="octicon octicon-link"></span></a>The Definition</h3>
