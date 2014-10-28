@@ -122,14 +122,14 @@ git push
 </p>
 
 <br>
-<h3>So how does lucy do it?</h3>
+<h3>So how does Lucy do it?</h3>
 <p>
-All the files used to create lucy's phonegap module can be seen here:<br>
+All the files used to create Lucy's phonegap module can be seen here:<br>
 <a href="https://github.com/bobby-brennan/lc-pkg-phonegap">https://github.com/bobby-brennan/lc-pkg-phonegap</a>
 </p>
 <p>
   You'll find definition.json in the root directory.
-  Nothing new here...if you're not familiar with how lucy definitions work, check out the <a href="http://lucybot.github.io/blog/hello-world.html">Hello World</a> article.
+  Nothing new here...if you're not familiar with how Lucy definitions work, check out the <a href="http://lucybot.github.io/blog/hello-world.html">Hello World</a> article.
 </p>
 <div class="highlight highlight-bash"><pre>
 lucy define definition.json
@@ -159,7 +159,7 @@ lucy define definition.json
 </pre></div>
 
 <p>
-  <code>lucy_def</code> tells lucy that this package is for the phonegap definition (specified as 'name' in definition.json).<br>
+  <code>lucy_def</code> tells Lucy that this package is for the phonegap definition (specified as 'name' in definition.json).<br>
   <code>package_name</code> is left unspecified, so it defaults to the same value as lucy_def.<br>
   <code>files</code> is a mapping from files in this package to files in the destination directory.<br>
   ++ <code>from</code> specifies the file (or glob) we're pulling from<br>
@@ -199,7 +199,7 @@ lucy publish .
 </pre></div>
 
 <p>
-  Now lucy has all the code in our directory, along with definition.json and package.json, and <strong>anyone can run</strong>
+  Now Lucy has all the code in our directory, along with definition.json and package.json, and <strong>anyone can run</strong>
 </p>
 <div class="highlight highlight-bash"><pre>
 lucy build phonegap
