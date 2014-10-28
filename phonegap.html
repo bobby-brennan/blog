@@ -55,13 +55,19 @@ this got me all the files I needed to actually run an app, but the next 30-60 mi
 - Generating new icons and splashscreens (dozens of them, all at different sizes) to replace the placeholders that came with the repo<br>
 </p>
 </p>
+<p>
 Even after I was satisfied that I'd discarded all the placeholders and made the app my own, I was bitten by a couple lingering issues:<br>
-- I missed the &lt;author&gt; attribute, which was left as PhoneGap Team<br>
+- I missed the &lt;author&gt; attribute in config.xml, which was left as PhoneGap Team<br>
 - I'd left in a bunch of unnecessary plugins in config.xml, causing my app to ask for tons of permissions it didn't need<br>
 </p>
+<p>
 This is probably a familiar story.
-Anytime you fork a repo or import a new library, there's always a bit of overhead before you can use it; you might need to write a wrapper around the library or change portions of the code to suit your needs.
-However, those needs are usually predictable and trivial...perfect for automation! That's where Lucy comes in.
+</p>
+<p>
+Anytime you fork a repo or import a new library, there's always a bit of customization overhead before you can use it;
+whether it's by editing the code or writing a wrapper around it, you have some grunt work to do.
+However, that grunt work is usually predictable and trivial...perfect for automation! That's where Lucy comes in.
+</p>
 <br><br>
 
 <h3>
