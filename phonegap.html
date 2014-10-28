@@ -160,6 +160,34 @@ lucy define definition.json
   ++ <code>to</code> specifies the file we're writing to, and defaults to the same thing as from<br>
   ++ <code>method</code> defaults to "render", meaning the file contains EJS that needs to be filled, but can be set to "copy"<br>
 </p>
+<p>
+  Nothing new so far, until we get to <code>js_scripts</code>. This is a list of js files that will be run after all files have been generated.
+  Let's take a look at icongen.js
+</p>
+
+<p>
+  Every js_script is run as a nodejs file, and is expected to export a single function run:
+</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">exports</span><span class="p">.</span><span class="nx">run</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">dirs</span><span class="p">,</span> <span class="nx">config</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">config</span><span class="p">.</span><span class="nx">icon</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">next</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="kd">var</span> <span class="nx">icon</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">icon</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">iconPath</span> <span class="o">=</span> <span class="nx">icon</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">?</span> <span class="nx">icon</span> <span class="o">:</span> <span class="nx">dirs</span><span class="p">.</span><span class="nx">destDir</span> <span class="o">+</span> <span class="s1">'/'</span> <span class="o">+</span> <span class="nx">icon</span><span class="p">;</span>
+  <span class="nx">makeDirs</span><span class="p">(</span><span class="nx">dirs</span><span class="p">.</span><span class="nx">destDir</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">runAllConverts</span><span class="p">(</span><span class="nx">iconPath</span><span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">splash_background</span><span class="p">);</span>
+    <span class="nx">next</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>
+  run() takes three arguments:
+  <code>dirs</code> contains <code>dirs.srcDir</code> and <code>dirs.destDir</code> for working with files in both the package and the target directory<br>
+  <code>config</code> contains the JSON supplied to <code>lucy build</code>
+  <code>next</code> is a function that must be called once the script has finished its work.
+</p>
         </section>
 
         <footer>
