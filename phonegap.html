@@ -188,6 +188,34 @@ lucy define definition.json
   <code>config</code> contains the JSON supplied to <code>lucy build</code><br>
   <code>next</code> is a function that must be called once the script has finished its work.<br>
 </p>
+
+<div class="highlight highlight-bash"><pre>
+lucy publish .
+</pre></div>
+
+<p>
+  Now lucy has all the code in our directory, along with definition.json and package.json, and anyone can run
+</p>
+<div class="highlight highlight-bash"><pre>
+lucy build phonegap
+</pre></div>
+<p>
+  to generate a custom PhoneGap repository.
+</p>
+
+<h3>What's next?</h3>
+If you're in the beta (<a href="http://lucybot.github.io/blog/">sign up!</a>), you can try extending the phonegap module with a new package.
+Simply fork my repo at:<br>
+<a href="https://github.com/bobby-brennan/lc-pkg-phonegap">https://github.com/bobby-brennan/lc-pkg-phonegap</a><br>
+and give your package a unique name by editing package.json:<br>
+<code>"package_name": "even-better-phonegap"</code><br>
+Edit the code, add some new features (maybe a background color for index.html?), and run
+<code>lucy publish .</code>
+from the root directory of the repository.
+
+<p>
+  Happy Hacking!
+</p>
         </section>
 
         <footer>
