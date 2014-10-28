@@ -39,14 +39,14 @@
 <a name="first-post-hello-world" class="anchor" href="#first-post-hello-world"><span class="octicon octicon-link"></span></a>First Post: Hello World</h2>
 
 <p>10/23/2014<br><br>
-The first official lucy release was pushed today! You can see the project here:
+The first official Lucy release was pushed today! You can see the project here:
 <br>
 <a href="https://github.com/bobby-brennan/lucy">https://github.com/bobby-brennan/lucy</a>
 <br>
 <code>define</code> and <code>publish</code> are still in beta, but you can <code>build</code> all you want! Sign up for the beta (above) if you'd like an early peek at the full version.
 <br>
 <br>
-So what can lucy do? To start, there are two main components to a lucy module:<br></p>
+So what can Lucy do? To start, there are two main components to a Lucy module:<br></p>
 
 <ul>
 <li>DEFINITION - this is JSON that describes what kind of code is being generated, and provides a sample configuration.<br>
@@ -55,11 +55,11 @@ So what can lucy do? To start, there are two main components to a lucy module:<b
 </li>
 </ul>
 
-<p>Most users will simply run <code>lucy build</code> to generate code from an existing lucy package. However, you can also create your own definitions and packages to share with others. Let's walk through a "hello world" example.</p>
+<p>Most users will simply run <code>lucy build</code> to generate code from an existing Lucy package. However, you can also create your own definitions and packages to share with others. Let's walk through a "hello world" example.</p>
 
 <p><i>Note that while we're in beta, the <code>define</code> and <code>publish</code> commands won't work unless you're signed up. Feel free to jump ahead to <code>build</code> though!</i>
 <br>
-If you haven't already installed lucy, visit the <a href="https://github.com/bobby-brennan/lucy">github page</a> for instructions.</p>
+If you haven't already installed Lucy, visit the <a href="https://github.com/bobby-brennan/lucy">github page</a> for instructions.</p>
 
 <h3>
 <a name="quickstart" class="anchor" href="#quickstart"><span class="octicon octicon-link"></span></a>Quickstart</h3>
@@ -90,7 +90,7 @@ lucy build hello-world-YOUR_UNIQUE_ID:java config.json
 
 <div class="highlight highlight-js"><pre><span class="p">{</span>
   <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"hello-world"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"A hello world example for lucy"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"A hello world example for Lucy"</span><span class="p">,</span>
   <span class="s2">"sample_input"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"greeting"</span><span class="o">:</span> <span class="s2">"Hello"</span><span class="p">,</span>
     <span class="s2">"person"</span><span class="o">:</span> <span class="s2">"world"</span>
@@ -103,7 +103,7 @@ lucy build hello-world-YOUR_UNIQUE_ID:java config.json
 <div class="highlight highlight-bash"><pre>lucy define def.json
 </pre></div>
 
-<p>which pushes the definition to lucy's servers.
+<p>which pushes the definition to Lucy's servers.
 <br></p>
 
 <h3>
@@ -144,7 +144,7 @@ lucy build hello-world-YOUR_UNIQUE_ID:java config.json
 
 <div class="highlight highlight-js"><pre><span class="p">{</span>
   <span class="s2">"greeting"</span><span class="o">:</span> <span class="s2">"Yo"</span><span class="p">,</span>
-  <span class="s2">"person"</span><span class="o">:</span> <span class="s2">"lucy"</span>
+  <span class="s2">"person"</span><span class="o">:</span> <span class="s2">"Lucy"</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -156,7 +156,7 @@ lucy build hello-world-YOUR_UNIQUE_ID:java config.json
 <p>which will generate this file in the working directory:
 <br><br><i>hello.js</i></p>
 
-<div class="highlight highlight-js"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Yo lucy"</span><span class="p">);</span>
+<div class="highlight highlight-js"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Yo Lucy"</span><span class="p">);</span>
 </pre></div>
 
 <p><br></p>
