@@ -66,9 +66,9 @@ However, those needs are usually predictable and trivial...perfect for automatio
 <div class="highlight highlight-bash"><pre>
 lucy build phonegap
 </pre></div>
-<br>
+<p>
 It's that simple! That command will bring up an editor with a config for you to fill out:
-<br>
+</p>
 <div class="highlight highlight-js"><pre><span class="p">{</span>
   <span class="s2">"appName"</span><span class="o">:</span> <span class="s2">"Lucy's Phonegap Test"</span><span class="p">,</span>
   <span class="s2">"appDescription"</span><span class="o">:</span> <span class="s2">"A test of the command: lucy build phonegap"</span><span class="p">,</span>
@@ -92,9 +92,23 @@ It's that simple! That command will bring up an editor with a config for you to 
   <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
+<p>
+  If you execute this command inside a <a href="https://github.com/new">new repository</a>, you can just run
+</p>
+<div class="highlight highlight-bash"><pre>
+git add ./*
+git commit -a -m "Initialize PhoneGap app"
+git push
+</pre></div>
+<p>
+  Then mosey on over to <a href="http://build.phonegap.com/">PhoneGap Build</a> and create a new project with your repo's URL.
+  You're all set! You've got an app with a custom name, icons, splash screens, plugins, and permissions, just from a few lines of JSON!
+</p>
 
-
-
+<h3>So how does lucy do it?</h3>
+<p>
+  Let's take a look at the definition first
+</p>
 
 
 
