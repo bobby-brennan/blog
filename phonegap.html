@@ -41,7 +41,7 @@
 <p>10/28/2014</p>
 <p>
 Lucy can do all sorts of things, but one of the simplest and most compelling use-cases is getting your
-coworkers, users, or readers up and running with a <b>new library or platform</b>.
+coworkers, users, or readers up and running with a <strong>new library or platform</strong>.
 Today we'll look at how we can use Lucy to help people get started building a PhoneGap application.
 </p>
 <p>
@@ -49,25 +49,25 @@ When I was building my first PhoneGap app, I started by <strong>forking a starte
 <br><a href="https://github.com/arvindr21/helloPhoneGap">https://github.com/arvindr21/helloPhoneGap</a><br>
 </p>
 <p>
-This got me all the files I needed to actually compile and run (<b>awesome!</b>) but the next <b>30-60 minutes</b> were spent:<br>
-- Changing the <b>app's name</b> (in both config.xml and index.html)<br>
-- Changing the <b>package name</b>, <b>description</b>, and <b>version</b><br>
-- Hunting down and <b>changing defaults</b> that the original author had set (fullscreen=true, phonegap-version was old)<br>
-- Generating <b>new icons and splashscreens</b> (dozens of them, all at different sizes) to replace the placeholders that came with the repo<br>
+This got me all the files I needed to actually compile and run (<strong>awesome!</strong>) but the next <strong>30-60 minutes</strong> were spent:<br>
+- Changing the <strong>app's name</strong> (in both config.xml and index.html)<br>
+- Changing the <strong>package name</strong>, <strong>description</strong>, and <strong>version</strong><br>
+- Hunting down and <strong>changing defaults</strong> that the original author had set (fullscreen=true, phonegap-version was old)<br>
+- Generating <strong>new icons and splashscreens</strong> (dozens of them, all at different sizes) to replace the placeholders that came with the repo<br>
 </p>
 </p>
 <p>
-Even after I was satisfied that I'd discarded all the placeholders and made the app my own, I was bitten by a couple <b>lingering issues</b>:<br>
-- I <b>missed</b> the &lt;author&gt; attribute in config.xml, which was left as PhoneGap Team<br>
-- I'd left in a bunch of <b>unnecessary plugins</b> in config.xml, causing my app to ask for tons of <b>permissions it did not need</b><br>
+Even after I was satisfied that I'd discarded all the placeholders and made the app my own, I was bitten by a couple <strong>lingering issues</strong>:<br>
+- I <strong>missed</strong> the &lt;author&gt; attribute in config.xml, which was left as PhoneGap Team<br>
+- I'd left in a bunch of <strong>unnecessary plugins</strong> in config.xml, causing my app to ask for tons of <strong>permissions it did not need</strong><br>
 </p>
 <p>
-<b>This is probably a familiar story.</b>
+<strong>This is probably a familiar story.</strong>
 </p>
 <p>
-Anytime you fork a repo or import a new library, there's always a bit of <b>customization overhead</b> before you can use it;
-whether it's by <b>editing</b> the code or writing a <b>wrapper</b> around it, you have some <b>grunt work</b> to do.
-However, that grunt work is usually <b>predictable</b> and <b>trivial</b>...perfect for <b>automation</b>!
+Anytime you fork a repo or import a new library, there's always a bit of <strong>customization overhead</strong> before you can use it;
+whether it's by <strong>editing</strong> the code or writing a <strong>wrapper</strong> around it, you have some <strong>grunt work</strong> to do.
+However, that grunt work is usually <strong>predictable</strong> and <strong>trivial</strong>...perfect for <strong>automation</strong>!
 </p>
 <p>
 That's where Lucy comes in.
@@ -82,7 +82,7 @@ That's where Lucy comes in.
 lucy build phonegap
 </pre></div>
 <p>
-<b>It's that simple!</b> That command will bring up an editor with a <b>config</b> for you to fill out:
+<strong>It's that simple!</strong> That command will bring up an editor with a <strong>config</strong> for you to fill out:
 </p>
 <div class="highlight highlight-js"><pre><span class="p">{</span>
   <span class="s2">"appName"</span><span class="o">:</span> <span class="s2">"Lucy's Phonegap Test"</span><span class="p">,</span>
@@ -117,8 +117,8 @@ git push
 </pre></div>
 <p>
   Then mosey on over to <a href="http://build.phonegap.com/">PhoneGap Build</a> and create a new project with your repo's URL.
-  You're all set! You've got an app with a <b>custom name</b>, <b>icons</b>, <b>splash screens</b>, <b>plugins</b>, and <b>permissions</b>,
-  just from a <b>few lines of JSON</b>!
+  You're all set! You've got an app with a <strong>custom name</strong>, <strong>icons</strong>, <strong>splash screens</strong>, <strong>plugins</strong>, and <strong>permissions</strong>,
+  just from a <strong>few lines of JSON</strong>!
 </p>
 
 <h3>So how does lucy do it?</h3>
@@ -199,28 +199,28 @@ lucy publish .
 </pre></div>
 
 <p>
-  Now lucy has all the code in our directory, along with definition.json and package.json, and <b>anyone can run</b>
+  Now lucy has all the code in our directory, along with definition.json and package.json, and <strong>anyone can run</strong>
 </p>
 <div class="highlight highlight-bash"><pre>
 lucy build phonegap
 </pre></div>
 <p>
-  to generate a <b>custom PhoneGap application</b>.
+  to generate a <strong>custom PhoneGap application</strong>.
 </p>
 
 <h3>What's next?</h3>
 <p>
-If you're in the beta (<a href="http://lucybot.github.io/blog/">sign up!</a>), you can try <b>extending</b> the phonegap module with a new package.
+If you're in the beta (<a href="http://lucybot.github.io/blog/">sign up!</a>), you can try <strong>extending</strong> the phonegap module with a new package.
 Simply fork my repo at:<br>
 <a href="https://github.com/bobby-brennan/lc-pkg-phonegap">https://github.com/bobby-brennan/lc-pkg-phonegap</a><br>
 and give your package a unique name by editing package.json:<br>
 <code>"package_name": "even-better-phonegap"</code><br>
-Edit the code, add some <b>new features</b> (maybe a background color for index.html?), and run
+Edit the code, add some <strong>new features</strong> (maybe a background color for index.html?), and run
 <code>lucy publish .</code>
 from the root directory of the repository.
 </p>
 <p>
-  <b>Happy Hacking!</b>
+  <strong>Happy Hacking!</strong>
 </p>
         </section>
 
