@@ -35,9 +35,69 @@
           <input type="submit" value="Join"></input>
         </form>
           <h2>
-<a name="first-post-hello-world" class="anchor" href="#first-post-hello-world"><span class="octicon octicon-link"></span></a>First post: Hello World</h2>
+<a name="first-post-hello-world" class="anchor" href="#first-post-hello-world"><span class="octicon octicon-link"></span></a>Getting Started with Lucy</h2>
 
-<p>10/23/2014<br><br>
+<p>10/28/2014<br><br>
+Lucy can do all sorts of things, but one of the simplest and most compelling use-cases is getting your coworkers, users, or readers up and running with a new library or platform.
+Today we'll look at how we can use Lucy to help people get started building a PhoneGap application.
+<br>
+When I was building my first PhoneGap app, I started by forking a "starter repo":
+<br><a href="https://github.com/arvindr21/helloPhoneGap">https://github.com/arvindr21/helloPhoneGap</a>
+<br>
+this got me started will all the necessary files to actually run an app, but the next 30-60 minutes were spent:
+- Changing the app's name (in both config.xml and index.html)
+- Changing the package name, description, and version
+- Hunting down and changing defaults that had been set without my knowledge (fullscreen=true, phonegap-version was old)
+- Generating new icons (dozens of them, all at different sizes) to replace the placeholders that came with the repo
+<br><br>
+Even after I was satisfied that I'd discarded all the placeholders and made the app my own, I was bitten by a couple lingering issues:
+- I missed the &lt;author&gt; attribute, which was left as PhoneGap Team
+- I'd left in a bunch of unnecessary plugins in config.xml, causing my app to ask for tons of permissions it didn't need
+<br><br>
+This is probably a familiar story.
+Anytime you fork a repo or import a new library, there's always a bit of overhead before you can use it; you might need to write a wrapper around the library or change portions of the code to suit your needs.
+However, those needs are usually predictable and trivial...perfect for automation! That's where Lucy comes in.
+<br><br>
+
+<h3>
+  Building a PhoneGap app with Lucy
+</h3>
+
+<div class="highlight highlight-bash"><pre>
+lucy build phonegap
+</pre></div>
+<br>
+It's that simple! That command will bring up an editor with a config for you to fill out:
+<br>
+<div class="highlight highlight-js"><pre><span class="p">{</span>
+  <span class="s2">"appName"</span><span class="o">:</span> <span class="s2">"Lucy's Phonegap Test"</span><span class="p">,</span>
+  <span class="s2">"appDescription"</span><span class="o">:</span> <span class="s2">"A test of the command: lucy build phonegap"</span><span class="p">,</span>
+  <span class="s2">"packageName"</span><span class="o">:</span> <span class="s2">"com.lucytest"</span><span class="p">,</span>
+  <span class="s2">"authorName"</span><span class="o">:</span> <span class="s2">"Lucy Goose"</span><span class="p">,</span>
+  <span class="s2">"authorEmail"</span><span class="o">:</span> <span class="s2">"lucy@bbrennan.info"</span><span class="p">,</span>
+  <span class="s2">"authorUrl"</span><span class="o">:</span> <span class="s2">"bbrennan.info"</span><span class="p">,</span>
+  <span class="s2">"phonegapVersion"</span><span class="o">:</span> <span class="s2">"3.5.0"</span><span class="p">,</span>
+  <span class="s2">"orientation"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
+  <span class="s2">"useFullscreen"</span><span class="o">:</span> <span class="s2">"false"</span><span class="p">,</span>
+  <span class="s2">"icon"</span><span class="o">:</span> <span class="s2">"icon.png"</span><span class="p">,</span>
+  <span class="s2">"splash_background"</span><span class="o">:</span> <span class="s2">"#0A1244"</span><span class="p">,</span>
+  <span class="s2">"plugins"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="s2">"camera"</span><span class="p">,</span>
+    <span class="s2">"contacts"</span><span class="p">,</span>
+    <span class="s2">"com.phonegap.plugins.pushplugin"</span>
+  <span class="p">],</span>
+  <span class="s2">"externalDomains"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="s2">"http://www.mysite.com/"</span><span class="p">,</span>
+    <span class="s2">"http://*.google.com/"</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+
+
+
+
+
 The first official lucy release was pushed today! You can see the project here:
 <br>
 <a href="https://github.com/bobby-brennan/lucy">https://github.com/bobby-brennan/lucy</a>
