@@ -167,14 +167,12 @@ lucy define definition.json
   So <code>config.xml</code> and <code>index.html</code> are templates, but our www/css and www/js files will be copied directly.
 </p>
 <p>
-  Nothing new so far, until we get to <code>js_scripts</code>. This is a list of js files that will be run after all files have been generated.
-  Let's take a look at icongen.js
-</p>
-
-<p>
+  Nothing new so far, until we get to <code>js_scripts</code>. This is a list of NodeJS files that will be run after all the files above have been generated.
+</p><p>
   Every js_script is run as a nodejs file, and is expected to export a single function <code>run()</code>:
 </p>
 
+<i>from icongen.js</i>
 <div class="highlight highlight-js"><pre><span class="nx">exports</span><span class="p">.</span><span class="nx">run</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">dirs</span><span class="p">,</span> <span class="nx">config</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">config</span><span class="p">.</span><span class="nx">icon</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">next</span><span class="p">();</span>
