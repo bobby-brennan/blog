@@ -163,7 +163,8 @@ lucy define definition.json
   <code>files</code> is a mapping from files in this package to files in the destination directory.<br>
   ++ <code>from</code> specifies the file (or glob) we're pulling from<br>
   ++ <code>to</code> specifies the file we're writing to, and defaults to the same thing as from<br>
-  ++ <code>method</code> defaults to "render", meaning the file contains EJS that needs to be filled, but can be set to "copy"<br>
+  ++ <code>method</code> defaults to "render", meaning the file is a template that needs to be filled out, but can be set to "copy"<br>
+  So <code>config.xml</code> and <code>index.html</code> are templates, but our www/css and www/js files will be copied directly.
 </p>
 <p>
   Nothing new so far, until we get to <code>js_scripts</code>. This is a list of js files that will be run after all files have been generated.
