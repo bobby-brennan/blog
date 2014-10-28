@@ -166,7 +166,7 @@ lucy define definition.json
 </p>
 
 <p>
-  Every js_script is run as a nodejs file, and is expected to export a single function run:
+  Every js_script is run as a nodejs file, and is expected to export a single function <code>run()</code>:
 </p>
 
 <div class="highlight highlight-js"><pre><span class="nx">exports</span><span class="p">.</span><span class="nx">run</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">dirs</span><span class="p">,</span> <span class="nx">config</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
@@ -183,10 +183,10 @@ lucy define definition.json
 </pre></div>
 
 <p>
-  run() takes three arguments:
+  <code>run()</code> takes three arguments:<br>
   <code>dirs</code> contains <code>dirs.srcDir</code> and <code>dirs.destDir</code> for working with files in both the package and the target directory<br>
-  <code>config</code> contains the JSON supplied to <code>lucy build</code>
-  <code>next</code> is a function that must be called once the script has finished its work.
+  <code>config</code> contains the JSON supplied to <code>lucy build</code><br>
+  <code>next</code> is a function that must be called once the script has finished its work.<br>
 </p>
         </section>
 
