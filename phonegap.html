@@ -153,12 +153,12 @@ lucy define definition.json
 </pre></div>
 
 <p>
-  lucy_def tells lucy that this package is for the phonegap definition (specified as 'name' in definition.json).<br>
-  package_name is left unspecified, so it defaults to the same value as lucy_def.<br>
-  files is a mapping from files in this package to files in the destination directory.<br>
-  ++ from specifies the file (or glob) we're pulling from<br>
-  ++ to specifies the file we're writing to, and defaults to the same thing as from<br>
-  ++ method can be either "render" or "copy", depending on whether the source file contains EJS that needs to be filled out.<br>
+  <code>lucy_def</code> tells lucy that this package is for the phonegap definition (specified as 'name' in definition.json).<br>
+  <code>package_name</code> is left unspecified, so it defaults to the same value as lucy_def.<br>
+  <code>files</code> is a mapping from files in this package to files in the destination directory.<br>
+  ++ <code>from</code> specifies the file (or glob) we're pulling from<br>
+  ++ <code>to</code> specifies the file we're writing to, and defaults to the same thing as from<br>
+  ++ <code>method</code> defaults to "render", meaning the file contains EJS that needs to be filled, but can be set to "copy"<br>
 </p>
         </section>
 
